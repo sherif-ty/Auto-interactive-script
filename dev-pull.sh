@@ -3,17 +3,17 @@
 
 spawn $env(SHELL)
 expect -exact "\]0;root@IT-Sherif: /home/sherif/Desktop/tools/except-autoroot@IT-Sherif:/home/sherif/Desktop/tools/except-auto# "
-send -- "ssh root@lun.sa\r"
-expect -exact "ssh root@lun.sa\r
+send -- "ssh user@server.com\r"
+expect -exact "ssh user@server.com\r
 \rPassword: "
-send -- "password@nasrcity\r"
+send -- "server-user-password\r"
 expect -exact "*"
 send -- "cd /\r"
 expect -exact "*"
-send -- "cd /home/talabatcom/public_html/DEV/Admin\r"
+send -- "cd /path/to/your/location\r"
 expect -exact "*"
 send -- "git pull\r"
 expect -exact "git pull\r
-\rPassword for 'https://Lun-Dev@dev.azure.com': "
-send -- "d5nqxfsn7zfdrv2g6dpzp4xhduo4xislkfkhw4562qzoz3fuppxq\r"
+\rPassword for 'https://your-repo.com': "
+send -- "token or repo password\r"
 expect eof
